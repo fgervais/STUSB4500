@@ -1,18 +1,14 @@
-from pyBusPirateLite.I2C import *
+from pyBusPirateLite.I2Chigh import I2Chigh
 
 
 class BusPirate:
     def __init__(self):
-        i2c = I2C()
+        i2c = I2Chigh()
         i2c.speed = '400kHz'
         i2c.configure(power=True)
-        i2c.start()
-        i2c.transfer([0xec, 0xd0])
-        r = i2c.write_then_read(1, 1, [0xed])
-        print(f'BME280 ID={hex(r[0])}')
 
-    def read(self, address):
-        pass
+    def read_byte_data(self, i2c_addr, register):
+        i2c.get_byte(self, i2c_addr, register)
 
-    def write(self, address):
-        pass
+    def write_byte_data(self, i2c_addr, register, value):
+        i2c.set_byte(self, i2c_addr, register, value)
