@@ -1,14 +1,13 @@
 from pyBusPirateLite.I2Chigh import I2Chigh
 
-
 class BusPirate:
     def __init__(self):
-        i2c = I2Chigh()
-        i2c.speed = '400kHz'
-        i2c.configure(power=True)
+        self.i2c = I2Chigh()
+        self.i2c.speed = '400kHz'
+        self.i2c.configure(power=True, pullup=True)
 
     def read_byte_data(self, i2c_addr, register):
-        i2c.get_byte(self, i2c_addr, register)
+        return self.i2c.get_byte(i2c_addr, register)
 
     def write_byte_data(self, i2c_addr, register, value):
-        i2c.set_byte(self, i2c_addr, register, value)
+        self.i2c.set_byte(i2c_addr, register, value)
