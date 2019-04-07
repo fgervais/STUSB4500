@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "6394d2f0b4e98b54589e4609ef05c4eba20e460ac3ac2a3184e9189cc2dedd35"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.6"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "pybuspiratelite": {
+            "git": "https://github.com/juhasch/pyBusPirateLite.git",
+            "ref": "ca545fc8b164468e9144a9f1024b4a462c44089e"
+        }
+    },
+    "develop": {}
+}
